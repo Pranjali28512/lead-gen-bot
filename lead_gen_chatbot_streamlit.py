@@ -1,6 +1,8 @@
 import streamlit as st
 from fuzzywuzzy import process
 
+st.write("App is running...")
+
 # Initialize the chatbot UI
 st.title("🤖 AI Lead Generation Bot")
 
