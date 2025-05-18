@@ -6,6 +6,7 @@ import os
 # --------------- Page Setup ----------------
 st.set_page_config(page_title="Smart Assistant", page_icon="🤖")
 st.title("🤖 Smart Assistant")
+st.write("💬 Your intelligent AI assistant — ready to chat, assist, and collect info smartly.")
 
 # --------------- Sidebar for User Info ----------------
 st.sidebar.header("📋 Enter Your Details")
@@ -34,15 +35,15 @@ if st.sidebar.button("Submit"):
 # --------------- Chatbot Logic ----------------
 qa_pairs = {
     ("hi", "hello", "hey", "heyy", "helloo", "helooo"): 
-        " Hey there! Great to have you here. How can I assist you today?",
+        "👋 Hey there! Great to have you here. How can I assist you today?",
     ("services", "what do you offer", "tell me your services", "what services do you have", "what can you do"): 
-        " I can help answer questions, guide you through common queries, and assist you as needed.",
+        "🤖 I can help answer questions, guide you through common queries, and assist you as needed.",
     ("pricing", "cost", "price", "how much", "charges", "fees"): 
-        " We offer flexible options depending on your needs. Let me know what you're looking for, and I’ll guide you accordingly.",
+        "💡 We offer flexible options depending on your needs. Let me know what you're looking for, and I’ll guide you accordingly.",
     ("24/7", "available anytime", "support hours", "service time", "do you work all time", "always available"): 
-        " Yes! I’m always here to chat — anytime you need help or answers.",
+        "⏰ Yes! I’m always here to chat — anytime you need help or answers.",
     ("bye", "exit", "thank you", "thanks", "see you", "goodbye"): 
-        " Thanks for stopping by! Let me know if you need anything else. Have a wonderful day! 😊"
+        "🙌 Thanks for stopping by! Let me know if you need anything else. Have a wonderful day! 😊"
 }
 
 def chatbot_response(user_input):
@@ -73,6 +74,7 @@ if submitted and user_input:
 for sender, msg in st.session_state.messages:
     with st.chat_message("assistant" if sender == "Bot" else "user"):
         st.markdown(msg)
+
 
 
 
