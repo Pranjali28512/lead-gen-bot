@@ -7,6 +7,14 @@ import os
 st.set_page_config(page_title="AI Lead Gen Bot", page_icon="🤖")
 st.title("🤖 AI Lead Generation Bot")
 
+# ---------------- File Path Setup ----------------
+folder_path = "C:\\Users\\Parshuram  Dalwai\\OneDrive\\Desktop\\lea"
+file_path = os.path.join(folder_path, "user_data.csv")
+
+# Ensure folder exists
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+
 # ---------------- Sidebar for User Details ----------------
 st.sidebar.header("📋 Enter Your Details")
 name = st.sidebar.text_input("Your Name")
@@ -16,7 +24,6 @@ phone = st.sidebar.text_input("Your Phone Number")
 # Save user details to CSV
 def save_user_details(name, email, phone):
     new_data = {"Name": name, "Email": email, "Phone": phone}
-    file_path = "C:\\Users\\Parshuram  Dalwai\\OneDrive\\Desktop\\lea\\user_data.csv"
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
         df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
@@ -28,6 +35,14 @@ if st.sidebar.button("Submit"):
     if name and email and phone:
         save_user_details(name, email, phone)
         st.sidebar.success(f"✅ Thank you, {name}! Your details have been saved.")
+        
+        # Show current saved data for verification
+        try:
+            df_check = pd.read_csv(file_path)
+            st.sidebar.write("### Current saved users:")
+            st.sidebar.dataframe(df_check)
+        except Exception as e:
+            st.sidebar.error(f"Error reading saved data: {e}")
     else:
         st.sidebar.error("❌ Please fill all fields.")
 
