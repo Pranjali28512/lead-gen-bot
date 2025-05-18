@@ -9,7 +9,7 @@ st.title("🤖 AI Lead Generation Bot")
 
 # ---------------- File Path Setup ----------------
 folder_path = "C:\\Users\\Parshuram  Dalwai\\OneDrive\\Desktop\\lea"
-file_path = os.path.join(folder_path, "user_data.csv")
+file_path = os.path.join(folder_path, "C:\\Users\\Parshuram  Dalwai\\OneDrive\\Desktop\\lea\\user_data.xlsx")
 
 # Ensure folder exists
 if not os.path.exists(folder_path):
