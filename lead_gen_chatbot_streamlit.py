@@ -4,8 +4,8 @@ import pandas as pd
 import os
 
 # --------------- Page Setup ----------------
-st.set_page_config(page_title="AI Lead Gen Bot", page_icon="🤖")
-st.title("🤖 AI Lead Generation Bot")
+st.set_page_config(page_title="Smart Assistant", page_icon="🤖")
+st.title("🤖 Welcome Assistant")
 
 # --------------- Sidebar for User Info ----------------
 st.sidebar.header("📋 Enter Your Details")
@@ -34,15 +34,15 @@ if st.sidebar.button("Submit"):
 # --------------- Chatbot Logic ----------------
 qa_pairs = {
     ("hi", "hello", "hey", "heyy", "helloo", "helooo"): 
-        "👋 Hello there! I'm here to help with our AI lead gen services. Ask away!",
+        "👋 Hey there! Great to have you here. How can I assist you today?",
     ("services", "what do you offer", "tell me your services", "what services do you have", "what can you do"): 
-        "📌 We offer smart AI chatbots that engage website visitors, capture leads, and automate customer support 24/7.",
+        "📌 I can help answer questions, guide you through common queries, and assist you as needed.",
     ("pricing", "cost", "price", "how much", "charges", "fees"): 
-        "💰 Our pricing is flexible! Plans start affordably, tailored to your business size. Let’s chat details!",
+        "💰 We offer flexible options depending on your needs. Let me know what you're looking for, and I’ll guide you accordingly.",
     ("24/7", "available anytime", "support hours", "service time", "do you work all time", "always available"): 
-        "⏰ Yes! Our AI bots work round the clock, 24/7 — even when you sleep, we capture leads!",
+        "⏰ Yes! I’m always here to chat — anytime you need help or answers.",
     ("bye", "exit", "thank you", "thanks", "see you", "goodbye"): 
-        "🙌 Thanks for chatting! Feel free to reach out if you have more questions. Have a great day! 😊"
+        "🙌 Thanks for stopping by! Let me know if you need anything else. Have a wonderful day! 😊"
 }
 
 def chatbot_response(user_input):
@@ -57,7 +57,7 @@ def chatbot_response(user_input):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.write("💬 **Ask the AI Bot anything about our services:**")
+st.write("💬 **Ask me anything. I'm here to help!**")
 
 # Chat input form (to prevent duplicate messages)
 with st.form("chat_form", clear_on_submit=True):
@@ -73,6 +73,7 @@ if submitted and user_input:
 for sender, msg in st.session_state.messages:
     with st.chat_message("assistant" if sender == "Bot" else "user"):
         st.markdown(msg)
+
 
 
 
