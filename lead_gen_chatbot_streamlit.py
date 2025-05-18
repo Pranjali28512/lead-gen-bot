@@ -5,7 +5,7 @@ import os
 
 # --------------- Page Setup ----------------
 st.set_page_config(page_title="Smart Assistant", page_icon="🤖")
-st.title("🤖 Welcome Assistant")
+st.title("🤖 Smart Assistant")
 
 # --------------- Sidebar for User Info ----------------
 st.sidebar.header("📋 Enter Your Details")
