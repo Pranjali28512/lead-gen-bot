@@ -5,7 +5,7 @@ import os
 
 # --------------- Page Setup ----------------
 st.set_page_config(page_title="Smart Assistant", page_icon="🤖")
-st.title("🤖 Smart Assistant")
+st.title("🤖 NeuraBot Lead Assistant for E-commerce")
 
 # --------------- Sidebar for User Info ----------------
 st.sidebar.header("📋 Enter Your Details")
@@ -57,7 +57,8 @@ def chatbot_response(user_input):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.write("💬 **Ask me anything. I'm here to help!**")
+st.write("💬 **Powered by NeuraBot AI — Smart automation for busy businesses.**")
+st.write("Ask me anything. I'm here to help!")
 
 # Chat input form (to prevent duplicate messages)
 with st.form("chat_form", clear_on_submit=True):
